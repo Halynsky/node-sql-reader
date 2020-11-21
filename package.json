@@ -1,0 +1,34 @@
+{
+  "name": "node-sql-reader",
+  "version": "0.1.0",
+  "description": "Library to parse pure sql file or sql string in to queries array",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "test": "test",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Halynsky/node-sql-reader.git"
+  },
+  "keywords": [
+    "sql",
+    "parser",
+    "reader"
+  ],
+  "author": "Taras Halynskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Halynsky/node-sql-reader/issues"
+  },
+  "homepage": "https://github.com/Halynsky/node-sql-reader#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "4.1.2",
+    "@types/node": "12.12.6",
+    "rimraf": "3.0.2"
+  }
+}
