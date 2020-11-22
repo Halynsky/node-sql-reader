@@ -1,12 +1,12 @@
 {
   "name": "node-sql-reader",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Library to parse pure sql file or sql string in to queries array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "npm run build",
-    "test": "test",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && tsc",
     "clean": "rimraf ./dist"
   },
