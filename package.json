@@ -4,9 +4,10 @@
   "description": "Library to parse pure sql file or sql string in to queries array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "prepublish": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine --config=jasmine.json",
     "build": "npm run clean && tsc",
     "clean": "rimraf ./dist"
   },
@@ -28,8 +29,10 @@
   "homepage": "https://github.com/Halynsky/node-sql-reader#readme",
   "dependencies": {},
   "devDependencies": {
-    "typescript": "4.1.2",
     "@types/node": "12.12.6",
-    "rimraf": "3.0.2"
+    "@types/jasmine": "3.6.2",
+    "jasmine": "3.6.3",
+    "rimraf": "3.0.2",
+    "typescript": "4.1.2"
   }
 }
