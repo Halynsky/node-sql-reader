@@ -9,6 +9,14 @@ npm install node-sql-reader
 ```
 
 ## Usage
+
+### test_data.sql
+```sql
+INSERT INTO users (email, password, name) VALUES ('dummy1@somemail.com', 'hashed_password1', 'dummy1');
+INSERT INTO users (email, password, name) VALUES ('dummy2@somemail.com', 'hashed_password2', 'dummy2');
+INSERT INTO users (email, password, name) VALUES ('dummy3@somemail.com', 'hashed_password3', 'dummy3');
+```
+
 ```ts
 import { SqlReader } from 'node-sql-reader'
 import * as path from 'path';
@@ -23,13 +31,24 @@ export class TestDataInitializer {
     }
 }
 
+/*
+queries array:
+[
+   "INSERT INTO users (email, password, name) VALUES ('dummy1@somemail.com', 'hashed_password1', 'dummy1')",
+   "INSERT INTO users (email, password, name) VALUES ('dummy2@somemail.com', 'hashed_password2', 'dummy2')",
+   "INSERT INTO users (email, password, name) VALUES ('dummy3@somemail.com', 'hashed_password3', 'dummy3')",
+]
+*/
 ```
+
 ## API
 * `parseSqlString(sqlString: string): string[]`  
 Parse all queries from sql string. Returns array of queries.
 * `readSqlFile(filePath: string): string[]`  
 Reads all queries from file. Returns array of queries.
 * `runSqlFile(filepath: string, runnerFn: (query: string) => void)`  
+Parse all queries from sql file and runs runnerFn for each of them.
+* `runSqlFileAsync(filepath: string, runnerFn: (query: string) => Promise<any>): Promise<any>`  
 Parse all queries from sql file and runs runnerFn for each of them. Has an async version.
 
 ## Features requests / bugs

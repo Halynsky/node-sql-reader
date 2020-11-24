@@ -28,7 +28,7 @@ export class SqlReader {
         }
     }
 
-    static async runSqlFileAsync(filepath: string, runnerFn: (query: string) => Promise<any>) {
+    static async runSqlFileAsync(filepath: string, runnerFn: (query: string) => Promise<any>): Promise<any> {
         let queries = SqlReader.readSqlFile(filepath);
 
         for (let query of queries) {
