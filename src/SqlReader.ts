@@ -7,10 +7,15 @@ export class SqlReader {
 
     static parseSqlString(sqlString: string): string[] {
         return sqlString
+            // skip sql comments
             .replace(/(--)(.*)/g, '')
-            .replace(/\r?\n|\r/g, '')
+            // replace new line
+            .replace(/\r?\n|\r/g, ' ')
+            // replace multiple spaces
+
             .split(';')
-            .filter((query) => query?.length);
+            .map(query => query.trim())
+            .filter(query => query?.length);
     }
 
     static readSqlFile(filepath: string): string[] {
