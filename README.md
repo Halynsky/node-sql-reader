@@ -17,6 +17,7 @@ INSERT INTO users (email, password, name) VALUES ('dummy2@somemail.com', 'hashed
 INSERT INTO users (email, password, name) VALUES ('dummy3@somemail.com', 'hashed_password3', 'dummy3');
 ```
 
+### TestDataInitializer.ts
 ```ts
 import { SqlReader } from 'node-sql-reader'
 import * as path from 'path';
