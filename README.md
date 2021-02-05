@@ -1,7 +1,9 @@
 # node-sql-reader
-This library can parse pure sql file or sql string in to queries array.  
-The main use case that made me to create this library was inability of [TypeOrm](https://typeorm.io) to run sql file.
-I needed to run sql file with test data each time when I restart a server to get same starting test data.  
+This library can parse pure sql file or sql string into queries array.  
+The main use case that made me create this library was the inability of [TypeOrm](https://typeorm.io) to run sql file.
+I needed to run sql file with test data each time when I restart a server to get the same starting test data. 
+So TypeOrm can run the single query, but it can't run a file with sql. So this lib can help you to parse a file and get separate queries from it.
+
 
 ## Install
 ```
@@ -50,7 +52,7 @@ Reads all queries from file. Returns array of queries.
 * `runSqlFile(filepath: string, runnerFn: (query: string) => void)`  
 Parse all queries from sql file and runs runnerFn for each of them.
 * `runSqlFileAsync(filepath: string, runnerFn: (query: string) => Promise<any>): Promise<any>`  
-Parse all queries from sql file and runs runnerFn for each of them. Has an async version.
+Parse all queries from sql file and runs runnerFn for each of them in ASYNC mode.
 
 ## Features requests / bugs
 Feature requests and bugs on [github](https://github.com/Halynsky/node-sql-reader)
